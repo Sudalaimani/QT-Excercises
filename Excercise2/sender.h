@@ -1,15 +1,13 @@
 #ifndef SENDER_H
 #define SENDER_H
 
-#include <QThread>
+#include <QObject>
 
-class cSender : public QThread
+class cSender : public QObject
 {
     Q_OBJECT
 public:
     explicit cSender(QObject *parent = 0);
-
-    void run();
 
 protected:
     void timerEvent(QTimerEvent *event);
@@ -21,6 +19,7 @@ signals:
     void sigSender(uint);
     
 public slots:
+    void run();
     
 };
 

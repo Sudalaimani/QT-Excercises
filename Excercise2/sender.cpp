@@ -2,17 +2,14 @@
 #include <QtDebug>
 
 cSender::cSender(QObject *parent) :
-    QThread(parent)
+    QObject(parent)
 {
     m_iCount = 0;
-    moveToThread(this);
-    this->start();
 }
 
 void cSender::run()
 {
     startTimer(200);     // 200-millisecond timer
-    this->exec();
 }
 
 void cSender::timerEvent(QTimerEvent *event)
