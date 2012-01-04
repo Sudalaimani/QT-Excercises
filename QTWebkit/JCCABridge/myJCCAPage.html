@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<script type="text/javascript" src="JccaBridge.js"></script>
+<script type="text/javascript">
+
+function Success(Name)
+{
+	alert("Success 1 : " + Name);
+}
+
+function Failure()
+{
+	alert("Failure");
+}
+
+function Success1(Name)
+{
+	alert("Success 2 : Hello " + Name);
+}
+
+function Success2(Name)
+{
+	alert("Success 3 : My name is " + Name);
+}
+
+
+function GetName()
+{
+	var EmpDetails = {"Name": "Sudalai",
+			"Emp id": "824",}
+
+	alert("Call 1");
+	gm.getName(Success,Failure,EmpDetails);
+	alert("Call 2");
+	gm.getName(Success1,Failure,EmpDetails);
+	alert("Call 3");
+	gm.getName(Success2,Failure,EmpDetails);
+}
+
+</script>
+</HEAD>
+<BODY>
+<INPUT TYPE="button" NAME="Name" VALUE="Name" onClick="GetName();">
+</BODY>
+</HTML>
